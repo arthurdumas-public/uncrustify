@@ -1779,6 +1779,10 @@ nl_enum_identifier_colon;
 extern Option<iarf_e>
 nl_enum_colon_type;
 
+// Add or remove new line before '(' of control statements ('if', 'for', 'switch',<br/>'while', etc.).
+extern Option<iarf_e>
+nl_before_sparen;
+
 // Add or remove newline between 'struct and '{'.
 extern Option<iarf_e>
 nl_struct_brace;

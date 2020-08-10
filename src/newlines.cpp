@@ -902,6 +902,12 @@ static bool newlines_if_for_while_switch(chunk_t *start, iarf_e nl_opt)
 
    if (chunk_is_token(pc, CT_SPAREN_OPEN))
    {
+      chunk_t *prev = chunk_get_prev_nnl(pc);
+      if (prev != nullptr)
+      {
+         newline_iarf_pair(prev, pc, options::nl_before_sparen());
+      }
+
       chunk_t *close_paren = chunk_get_next_type(pc, CT_SPAREN_CLOSE, pc->level);
       chunk_t *brace_open  = chunk_get_next_ncnl(close_paren);
 
